@@ -1,26 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { StatsBar } from "@/components/site/StatsBar";
+import { Concept } from "@/components/site/Concept";
+import { Amenities } from "@/components/site/Amenities";
+import { FloorPlans } from "@/components/site/FloorPlans";
+import { Location } from "@/components/site/Location";
+import { Developer } from "@/components/site/Developer";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      {
+        title:
+          "Belvedere Hill Residence · 4 Suítes · 210m² no Caminho das Árvores",
+      },
+      {
+        name: "description",
+        content:
+          "Apartamentos de alto padrão no Caminho das Árvores, Salvador. Torre única, 4 suítes, 210m² com gabinete, nascente total. Por Grupo Azinunes.",
+      },
+      { property: "og:title", content: "Belvedere Hill Residence" },
+      {
+        property: "og:description",
+        content:
+          "A vida a seu Bel-Prazer no Caminho das Árvores. 4 suítes, 210m², torre única.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="bg-background text-foreground">
+      <Header />
+      <Hero />
+      <StatsBar />
+      <Concept />
+      <Amenities />
+      <FloorPlans />
+      <Location />
+      <Developer />
+      <Footer />
+      <WhatsAppButton />
+      <Toaster position="top-center" />
+    </main>
+  );
 }
