@@ -58,6 +58,7 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: {},
+    basepath: "/belvedere1",
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
     defaultErrorComponent: DefaultErrorComponent,
