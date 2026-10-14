@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && mkdir -p dist/client/belvedere1 && cp -r dist/client/assets dist/client/belvedere1/",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
